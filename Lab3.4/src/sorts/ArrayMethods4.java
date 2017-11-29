@@ -8,26 +8,34 @@ public class ArrayMethods4 {
 	}
 	public static void partition(int[] list1, int front, int back)
 	{
-		int i=0;
-		int j=0;
-		int pivotPos=0;
-		int pivot=list1[0];
 		
-		while(i<list1.length)
+		while(front<=back)
 		{
-			while(list1[i]<= pivot && i<pivot)
+			int pivot=list1[0];
+			while(list1[front]<=pivot)
 			{
-				i++;
+				front++;
 			}
-			while(list1[j]>pivot && i<list1.length)
+			while(list1[back]>pivot)
 			{
-				j++;
+				back--;
 			}
-			
+			if(front<=back)
+			{
+				intSwap(list1,front,back);
+				front++;
+				back--;
+			}
 		}
 	}
 	public static void quickSort(int[] list1, int front, int back)
 	{
 		
+	}
+	private static void intSwap(int[] arr, int i, int j)
+	{
+		int temp=arr[i];
+		arr[i]=arr[j];
+		arr[j]=temp;
 	}
 }
