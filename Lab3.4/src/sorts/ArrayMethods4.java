@@ -4,19 +4,20 @@ public class ArrayMethods4 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[]test1= {7,15,4,6,2,8,9,12,14};
+		int[]test1= {7,15,31,4,6,2,8,9,12,1,14};
 		printIntArray(test1);
 		System.out.println();
 		System.out.println();
-		ArrayMethods4.partition(test1, 4, 7);
+		System.out.print(ArrayMethods4.partition(test1, 0, 10));
+		System.out.println();
 		printIntArray(test1);
 	}
-	public static void partition(int[] list1, int front, int back)
+	public static int partition(int[] list1, int front, int back)
 	{
 		int pivotPos=0;
+		int pivot=list1[0];
 		while(front<=back)
 		{
-			int pivot=list1[0];
 			while(list1[front]<=pivot)
 			{
 				front++;
@@ -25,11 +26,13 @@ public class ArrayMethods4 {
 			{
 				back--;
 			}
+			if(front<back)
+			{
 				intSwap(list1,front,back);
-				front++;
-				back--;
+			}
 		}
-		intSwap(list1,pivotPos,0);
+		intSwap(list1,pivotPos,back);
+		return front;
 	}
 	public static void quickSort(int[] list1, int front, int back)
 	{
