@@ -44,6 +44,26 @@ public class ArrayMethods4 {
             quickSort(list1, pivotPoint+1, back);
         }
 	}
+	public static void combSort(int[]list1, int initGap)
+	{
+		int gap=initGap;
+		boolean swapped=true;
+		
+		while(gap!=1 ||swapped==true)
+		{
+			for(int i=0;i<initGap)
+		}
+	}
+	public static int getNextGap(int num)
+	{
+		int gap = (num*10)/13;
+		 
+	    if (gap < 1)
+	    {
+	        return 1;
+	    }
+	    return gap;
+	}
 	private static void intSwap(int[] arr, int i, int j)
 	{
 		int temp=arr[i];
