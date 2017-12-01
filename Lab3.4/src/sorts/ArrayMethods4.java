@@ -8,7 +8,7 @@ public class ArrayMethods4 {
 		printIntArray(test1);
 		System.out.println();
 		System.out.println();
-		System.out.print(ArrayMethods4.partition(test1, 0, 10));
+		ArrayMethods4.quickSort(test1, 0, test1.length-1);
 		System.out.println();
 		printIntArray(test1);
 	}
@@ -36,7 +36,13 @@ public class ArrayMethods4 {
 	}
 	public static void quickSort(int[] list1, int front, int back)
 	{
-		
+		if (front < back)
+        {
+            int pivotPoint = partition(list1, front, back);
+            
+            quickSort(list1, front, pivotPoint-1);
+            quickSort(list1, pivotPoint+1, back);
+        }
 	}
 	private static void intSwap(int[] arr, int i, int j)
 	{
