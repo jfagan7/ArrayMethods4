@@ -44,14 +44,24 @@ public class ArrayMethods4 {
             quickSort(list1, pivotPoint+1, back);
         }
 	}
-	public static void combSort(int[]list1, int initGap)
+	public static void combSort(int[]list1)
 	{
-		int gap=initGap;
+		int n=list1.length;
+		int gap=n;
 		boolean swapped=true;
 		
 		while(gap!=1 ||swapped==true)
 		{
-			for(int i=0;i<initGap)
+			gap=getNextGap(gap);
+			swapped =false;
+			for(int i=0;i<n-gap;i++)
+			{
+				if(list1[i]>list1[i+gap])
+				{
+					intSwap(list1,i,i+gap);
+					swapped=true;
+				}
+			}
 		}
 	}
 	public static int getNextGap(int num)
